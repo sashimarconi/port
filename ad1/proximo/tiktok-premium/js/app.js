@@ -72,12 +72,7 @@ function setupExitIntent() {
     }
   });
   // Mobile: beforeunload
-  window.addEventListener('beforeunload', function(e) {
-    if (!exitIntentShown) {
-      e.preventDefault();
-      e.returnValue = 'Tens \u20AC3.247,83 \u00E0 espera! Tens a certeza que queres sair?';
-    }
-  });
+  // Removido: não exibir popup de confirmação ao sair
 }
 
 function showExitIntent() {
