@@ -1,6 +1,6 @@
 /**
  * TikTok Pixel Events Tracking
- * Pixel: D4CD623C77UCD4LDVC2G
+ * Pixel: D71CL6RC77U5P0Q261K0
  * API oficial do TikTok Pixel (ttq)
  * Protecao contra disparos duplicados via event_id
  * Parametros otimizados com contents[] para melhor atribuicao
